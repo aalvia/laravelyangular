@@ -1,0 +1,43 @@
+<!-- product-list.component.html -->
+<div class="container">
+    <h2>Listado de Productos</h2>
+    <app-product-create></app-product-create>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>
+            <app-product-edit [productId]="product.id" ></app-product-edit>
+            <button class="btn btn-danger mat-icon-button" (click)="deleteProduct(product.id)">  <mat-icon class="align-middle">delete</mat-icon>Eliminar</button> 
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <pagination
+        [totalItems]="totalItems"
+        [itemsPerPage]="pageSize"
+        [(ngModel)]="currentPage"
+        (pageChanged)="onPageChange($event)"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true">
+      </pagination>
+    </div>
+  </div>
+  

@@ -1,0 +1,59 @@
+<div class="contenedorForm px-2 py-2">
+<form (ngSubmit)="submitForm()" [ngFormOptions]="{ updateOn: 'submit' }">
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input
+        [(ngModel)]="product.name"
+        [ngModelOptions]="{ standalone: true }"
+        [readonly]="isEditOff"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Descripción:</label>
+      <textarea
+        class="form-control"
+        id="description"
+        [readonly]="isEditOff"
+        [(ngModel)]="product.description"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">Precio:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        [readonly]="isEditOff"
+        [(ngModel)]="product.price"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="quantity">Cantidad:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="quantity"
+        [readonly]="isEditOff"
+        [(ngModel)]="product.quantity"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+    </div>
+    <!-- Puedes agregar más campos según tus necesidades -->
+    <div class="form-group text-center pt-2">
+      <button *ngIf="!isEditOff" type="submit" class="btn btn-primary">
+        {{ isEdit ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button *ngIf="isEditOff" type="button" class="btn btn-secondary" (click)="closeForm()">
+        Cerrar
+      </button>
+    </div>
+  </form>
+  
+</div>

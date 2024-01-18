@@ -1,0 +1,42 @@
+/* Agrega este bloque al archivo CSS correspondiente */
+.container {
+    margin-top: 20px;
+}
+
+h2 {
+    color: #007bff; /* Color azul, puedes cambiarlo según tus preferencias */
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.btn-danger {
+    margin-left: 5px;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.pagination a, .pagination span {
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #007bff; /* Borde azul, puedes cambiarlo según tus preferencias */
+    color: #007bff;
+    border-radius: 5px;
+}
+
+.pagination .active a {
+    background-color: #007bff; /* Fondo azul, puedes cambiarlo según tus preferencias */
+    color: #fff;
+}
